@@ -1,0 +1,8 @@
+datasets/
+data/
+*.jpg
+*.png
+*.pt
+runs/
+venv/
+__pycache__/
