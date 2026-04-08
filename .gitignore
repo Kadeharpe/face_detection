@@ -1,8 +1,21 @@
+# Datasets
 datasets/
 data/
-*.jpg
-*.png
+img_align_celeba/
+celeba_yolo_cls/
+
+# Model weights
 *.pt
+
+# Training outputs
 runs/
+
+# Virtual environment
 venv/
+
+# Python cache
 __pycache__/
+
+# Misc
+.env
+*.log
