@@ -15,8 +15,9 @@ YOLOv8 classification model
 
 Notes:
 Model will only classify identties who are already trained
-Uknown faces will be heard as uknown
+Unknown faces will come out as unkown.qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
 Could possibly add to training data to further advance the model
+test.jpg is a picture of id 9040 that has not been used in the test, train, or validate cycles so that is why it is the test 
 
 How to run:
 1. Go to CelebA img and download img_align_celeba and anno to download identity_celeba.txt which puts the identities to each photo.
