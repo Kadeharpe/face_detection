@@ -14,9 +14,9 @@ Support vector machine(SVM)
 YOLOv8 classification model
 
 Notes:
-Model will only classify identties who are already trained
-Unknown faces will come out as unkown.qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
-Could possibly add to training data to further advance the model
+Model will only classify identties who are already trained | 
+Unknown faces will come out as unkown | 
+Could possibly add to training data to further advance the model | 
 test.jpg is a picture of id 9040 that has not been used in the test, train, or validate cycles so that is why it is the test 
 
 How to run:
@@ -41,10 +41,10 @@ SVM | Improved baseline performance
 YOLOv8 | Best performing model
 
 Best YOLOv8 model:
-    10 identities
-    15 epochs
-    70% Top 1 Accuracy
-    100% Top 5 Accuracy
+    10 identities | 
+    15 epochs | 
+    70% Top 1 Accuracy | 
+    100% Top 5 Accuracy | 
 
 Pipline:
 Imput image > Detect face > Crop image > Classify with YOLO > Predict identity
