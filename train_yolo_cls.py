@@ -13,9 +13,7 @@ MIN_IMAGES_PER_ID = 20
 
 random.seed(42)
 
-# -----------------------------
-# READ IDENTITY LABELS
-# -----------------------------
+#read labels
 id_to_images = defaultdict(list)
 
 with open(IDENTITY_FILE, "r") as f:
@@ -70,7 +68,7 @@ model = YOLO("yolov8n-cls.pt")
 
 model.train(
     data="celeba_yolo_cls",
-    epochs=3,      # keep small for speed
+    epochs=15,      
     imgsz=224,
     batch=16
 )
