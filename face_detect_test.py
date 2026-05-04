@@ -6,7 +6,7 @@ face_cascade = cv2.CascadeClassifier(
 )
 
 #image you want to test
-image_path = "test.jpg"
+image_path = "test3.jpg"
 
 img = cv2.imread(image_path)
 
@@ -28,7 +28,7 @@ print("Faces detected:", len(faces))
 for (x, y, w, h) in faces:
     cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
-scale_percent = 50
+scale_percent = 300
 width = int(img.shape[1] * scale_percent / 100)
 height = int(img.shape[0] * scale_percent / 100)
 display_img = cv2.resize(img, (width, height))

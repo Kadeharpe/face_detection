@@ -18,18 +18,31 @@ if img is None:
     exit()
 
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+gray = cv2.equalizeHist(gray)
 
 #detect faces
 faces = face_cascade.detectMultiScale(
     gray,
-    scaleFactor=1.1,
-    minNeighbors=7,
-    minSize=(80, 80)
+    scaleFactor=1.05,
+    minNeighbors=4, #strength of detecting face
+    minSize=(30, 30) #minimum size of face detecting
 )
 
 if len(faces) == 0:
-    print("No face detected.")
-    exit()
+    print("No face detected. Using full image instead.")
+    
+    crop_path = "cropped_face.jpg"
+    cv2.imwrite(crop_path, img)
+
+else:
+    faces = sorted(faces, key=lambda f: f[2] * f[3], reverse=True)
+    x, y, w, h = faces[0]
+
+    face_crop= img[y:y+h, x:x+w]
+
+    crop_path = "cropped_face.jpg"
+    cv2.imwrite(crop_path, face_crop)
+
 
 #use largest detected face
 faces = sorted(faces, key=lambda f: f[2] * f[3], reverse=True)
@@ -63,7 +76,7 @@ cv2.putText(img, label, (x, y - 10),
             cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 255, 0), 2)
 
 #resize image
-scale_percent = 50
+scale_percent = 300
 width = int(img.shape[1] * scale_percent / 100)
 height = int(img.shape[0] * scale_percent / 100)
 display_img = cv2.resize(img, (width, height))

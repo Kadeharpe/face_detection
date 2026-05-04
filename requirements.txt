@@ -2,3 +2,4 @@ ultralytics
 opencv-python
 scikit-learn
 numpy
+pillow
